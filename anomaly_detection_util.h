@@ -20,7 +20,7 @@ class Line{
 class Point{
     public:
     const float x,y;
-    Point(float x, float y):x(x),y(x){}
+    Point(float x, float y):x(x),y(y){}
     };
 
 // performs a linear regression and returns the line equation

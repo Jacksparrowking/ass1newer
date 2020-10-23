@@ -4,15 +4,15 @@
 using namespace std;
 
 bool wrong(float val, float expected){
-	return val<expected-0.01 || val>expected+0.01;
+	return val<expected-0.1 || val>expected+0.1;
 }
 
 
 
 int main() {
-auto size = 4;
-float barx [size] = { -78, -4, -8, 9 };
-float bary [size] = { 3, 6, -9 , 9 };
+auto size = 10;
+float barx [size] = {1,2,3,4,5,6,7,8,9,10};
+float bary [size] = {2.1,4.2,6.1,8.1,10.3,12.2,14.4,16.1,18.2,20.3 };
 
 auto variancex = var(barx, size);
 auto variancey = var(bary, size);
@@ -32,6 +32,11 @@ Point* ps1[size];
 Line l1=linear_reg(ps1, size);
 
 std::cout << "the line is  : " << l1.f(1) << std::endl;
+
+Point check(4, 8);
+std::cout << "the distance is  : " <<dev(check, l1)  << std::endl;
+std::cout << "the distance is  : " <<dev(check, ps1, size)  << std::endl;
+
 
 /**********************************************************************************/
 

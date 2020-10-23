@@ -47,9 +47,9 @@ float arrayx[size];
 float arrayy[size];
 
 for(int  i=0; i < size; i++){
-Point* first =new Point (points[i] -> x, points[i]->y);
-sumx1 += first->x;
-sumy1  += first->y;
+Point first = Point (points[i] -> x, points[i]->y);
+sumx1 += first.x;
+sumy1  += first.y;
 arrayx[i] = points[i]->x;
 arrayy[i] = points[i]->y;
 
@@ -73,12 +73,21 @@ return line;
 
 // returns the deviation between point p and the line equation of the points
 float dev(Point p,Point** points, int size){
-	return 0;
+	
+Line line = linear_reg(points, size);
+auto y = line.f(p.x);
+if (y - p.y < 0) 
+return p.y -y;
+else return y - p.y;
+
 }
 
 // returns the deviation between point p and the line
 float dev(Point p,Line l){
-	return 0;
+	auto y = l.f(p.x);
+   if (y - p.y < 0) 
+return p.y -y;
+else return y - p.y;
 }
 
 
