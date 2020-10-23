@@ -47,9 +47,9 @@ float arrayx[size];
 float arrayy[size];
 
 for(int  i=0; i < size; i++){
-Point first = Point (points[i] -> x, points[i]->y);
-sumx1 += first.x;
-sumy1  += first.y;
+Point* first =new Point (points[i] -> x, points[i]->y);
+sumx1 += first->x;
+sumy1  += first->y;
 arrayx[i] = points[i]->x;
 arrayy[i] = points[i]->y;
 
